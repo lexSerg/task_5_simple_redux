@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.product-list{
+  border: 1px solid black;
+  margin: 1rem;
+  padding: .5rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.product{
+  min-width: 33%;
+  border : 1px solid black;
+  margin: .1rem;
+}
+.btn{
+  min-width: 30%;
+}
+.cart{
+  display: flex;
+  justify-content: right;
+}
+.cart-content{
+  justify-content: center;
+  flex-direction: column;
+  margin: .5rem 2rem;
+  width: 4rem;
+  padding: .2rem;
+  border : 1px solid gray;
+  border-radius: 1.2rem;
+  background-color: rgb(85, 129, 23);
+}
+.product-item{
+  background-color: #54d76299
+}
+.animate{
+  animation: cart-animate 2s 2;
+}
+.cart-img{
+  margin: .2rem auto;
+  width: 2rem;
+  transform: translateX(-6%);
+}
+.cart-text p {
+  margin: 0;
+  margin-top : -.7rem
+}
+.cart-text p span{
+  font-size: 2rem;
+  color : rgb(151, 61, 25);
+}
+@keyframes cart-animate{
+  0% {
+    scale: 100%;
+    background-color: rgb(163, 248, 35);
+  }
+  25% {
+    scale: 95%;
+    background-color: rgb(162, 243, 41);
+  }
+  50% {
+    scale: 90%;
+    background-color: rgb(135, 214, 23);
+  }
+  75% {
+    scale: 85%;
+    background-color: rgb(124, 201, 17);
+  }
+  100% {
+    scale: 80%;
+    background-color: rgb(85, 129, 23);
+    
+  }
+}
