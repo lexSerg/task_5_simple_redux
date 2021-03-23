@@ -17,7 +17,7 @@ function App(props) {
   return (
     <div className="App">
       <div className='cart'>
-        <div className={'cart-content'.concat(cart.length ? '' : ' animate') }>
+        <div className={'cart-content'.concat(!cart.length ? '' : ' animate') }>
           <div className='cart-img'>
             <img src={cart_logo} alt='cart'></img>
           </div>
