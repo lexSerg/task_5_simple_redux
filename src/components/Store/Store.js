@@ -3,18 +3,17 @@ import initialState from './initialState'
 const reducer = (state = initialState, action) => {
     switch(action.type){
       case 'ADD_TO_CART' : {
-        console.log(action);
+        let isAnimateCart = {is : true}
         const updatedCart = [...state.cart];
-        updatedCart.push(action.payload)
-        return {...state, cart : updatedCart}
+        updatedCart.push(action.payload);
+        return {...state, cart : updatedCart, isAnimateCart : isAnimateCart}
       }
       case 'REMOVE_FROM_CART' : {
-        console.log(action);
+        let isAnimateCart = {is : false}
         const updatedCart = state.cart.filter(item => item.id !== action.payload.id)
-        return {...state, cart : updatedCart}
+        return {...state, cart : updatedCart, isAnimateCart : isAnimateCart }
       };
       default : {
-        console.log(action);
         return state
       }
     }

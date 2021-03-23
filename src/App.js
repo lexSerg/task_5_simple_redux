@@ -4,11 +4,10 @@ import cart_logo from './img/cart.svg'
 import { connect } from 'react-redux';
 import Product from './components/Product'
 function App(props) {
-  const {productList, cart, addToCart, removeFromCart} = props;
-  const cartToggleHandler = (item) => {
-    console.log(item);
+  const {productList, cart, isAnimateCart, addToCart, removeFromCart} = props;
+  const cartToggleHandler = (item) => { 
     if (!cart.find(el => el.id === item.id)) {
-      addToCart(item)
+      addToCart(item);
     } 
     else {
       removeFromCart(item)
@@ -17,7 +16,7 @@ function App(props) {
   return (
     <div className="App">
       <div className='cart'>
-        <div className={'cart-content'.concat(!cart.length ? '' : ' animate') }>
+        <div className={'cart-content'.concat(!isAnimateCart.is ? '' : ' animate') }>
           <div className='cart-img'>
             <img src={cart_logo} alt='cart'></img>
           </div>
@@ -45,7 +44,8 @@ function App(props) {
 const mapStateToProps = (state) => {
   return {
     productList : state.productList,
-    cart : state.cart
+    cart : state.cart,
+    isAnimateCart : state.isAnimateCart
   }
 }
 const addToCart = (item) => {
@@ -60,5 +60,4 @@ const removeFromCart = (item) => {
     payload : item
   }
 }
-
 export default connect(mapStateToProps, {addToCart,removeFromCart})(App);
